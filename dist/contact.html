@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <nav
+      class="bg-gradient-to-b from-navy to-greyblue font-lucida-console p-5 md:items-center h-navbar-height text-center text-white flex font-extrabold gap-x-2 justify-center items-center md:text-2xl overflow-y-hidden"
+    >
+      <h6>
+        <img
+          src="logo.png"
+          alt="logo"
+          class="rounded-3xl h-logo hover:h-[7vh]"
+        />
+      </h6>
+      <h5>LearningHub</h5>
+    </nav>
+    <nav
+      class="bg-navy p-5 md:items-center md:justify-end mr-2 w-full md:h-[50px] h-auto text-white font-bold flex flex-col md:flex-row"
+    >
+      <div class="md:hidden flex justify-end">
+        <button onclick="displayMenu()">
+          <i class="bi bi-list border-white border-2 rounded px-2"></i>
+        </button>
+      </div>
+      <ul class="md:flex md:flex-row flex-col hidden" id="menu-bar">
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="contact.html">Contact</a>
+        </li>
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="about.html">About us</a>
+        </li>
+      </ul>
+    </nav>
+
+
+    <div class="bg-slate-300">
+      <div class="p-5 flex flex-col shadow border-navy m-3 bg-white">
+        <h1 class="font-lucida-console m-auto font-extrabold text-2xl">Contact us</h1>
+        <p>
+          At LearningHub, we're committed to providing a seamless experience for our users to connect and engage with us. Our contact page serves as a direct line of communication, allowing you to reach out with any inquiries, feedback, or collaboration opportunities. Whether you're a student seeking assistance, an educator looking to partner, or a curious visitor with questions about our platform, we're here to help. Our dedicated team is ready to address your needs promptly and professionally. Feel free to drop us a message, and we'll ensure your query receives the attention it deserves. Thank you for choosing LearningHub as your destination for learning and growth.</p>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center items-center w-full text-white font-lucida-console text-xl overflow-hidden gap-x-5">
+        
+        <div class="hover:bg-hover-shade p-5 rounded-rounded-edge bg-navy flex items-center justify-center"> 
+          <a href="https://github.com/Maham-Fatima" target="_blank">
+            <i class="bi bi-github w-image-sm"></i>
+            GitHub
+          </a>
+          
+        </div>
+        <div class="hover:bg-hover-shade p-5 rounded-rounded-edge bg-navy flex items-center justify-center">
+          <a href="https://www.linkedin.com/in/maham-fatima-517a98284/" target="_blank">
+            <i class="bi bi-linkedin w-image-sm"></i>
+            LinkedIn
+          </a>
+          
+        </div>
+        <div class="hover:bg-hover-shade p-5 rounded-rounded-edge bg-navy flex items-center justify-center"> 
+          <a href="mailto:fmaham599@gmail.com" target="_blank">
+            <i class="bi bi-envelope w-image-sm"></i>
+            Gmail
+          </a>
+        
+        </div>
+      </div>
+    </div>
+    
+    
+    <footer
+      class="h-footer flex justify-center items-center bg-gradient-to-t from-navy to-greyblue w-full text-white fixed bottom-0"
+    >
+      LearningHub slogan Education for all Copywright 2024
+    </footer>
+    <script src="contactJS.js"></script>
+  </body>
+</html>

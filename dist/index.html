@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <nav
+      class="bg-gradient-to-b from-navy to-greyblue font-lucida-console p-5 md:items-center h-navbar-height text-center text-white flex font-extrabold gap-x-2 justify-center items-center md:text-2xl overflow-y-hidden"
+    >
+      <h6>
+        <img
+          src="logo.png"
+          alt="logo"
+          class="rounded-3xl h-logo hover:h-[7vh]"
+        />
+      </h6>
+      <h5>LearningHub</h5>
+    </nav>
+    <nav
+      class="bg-navy p-5 md:items-center md:justify-end mr-2 w-full md:h-[50px] h-auto text-white font-bold flex flex-col md:flex-row"
+    >
+      <div class="md:hidden flex justify-end">
+        <button onclick="displayMenu()">
+          <i class="bi bi-list border-white border-2 rounded px-2"></i>
+        </button>
+      </div>
+      <ul class="md:flex md:flex-row flex-col hidden" id="menu-bar">
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="contact.html">Contact</a>
+        </li>
+        <li class="mr-3 hover:bg-hover-shade p-2 rounded">
+          <a href="about.html">About us</a>
+        </li>
+      </ul>
+      <div class="text-white hidden md:block p-2 " id="drop-down">
+        <select
+          name="course"
+          id="courses-menu"
+          class="bg-navy"
+          onchange="displayContent()"
+        >
+          <option value="custom" selected>Select</option>
+          <option value="java">Java</option>
+          <option value="c">C</option>
+          <option value="php">Php</option>
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+        </select>
+      </div>
+
+      <div class="text-white hidden md:block p-2 " id="quizdrop-down">
+        <select name="course" id="quizzez-menu" class="bg-navy" onchange="quizDisplay()">
+          <option value="custom" selected><a href="#">Quiz</a></option>
+          <option value="java"><a href="#">Java</a></option>
+          <option value="c"><a href="#">C</a></option>
+          <option value="php"><a href="#">Php</a></option>
+          <option value="javascript"><a href="#">Javascipt</a></option>
+          <option value="python"><a href="#">Python</a></option>
+        </select>
+      </div>
+    </nav>
+    <h1>
+      <button class="m-2" id="toggleButton" onclick="HideView()">
+        <i
+          class="bi bi-list fixed left-2 px-2 border-slate-900 border-2 rounded"
+        ></i>
+      </button>
+    </h1>
+    <div class="flex w-full">
+      <nav
+        class="fixed md:top-[15vh] top-[65px] bottom-[42px] left-0 hidden md:block w-[300px] items-center bg-navy text-center text-white overflow-y-hidden"
+        id="sidebar"
+      >
+        <div class="flex flex-col">
+          <h2 class="font-bold mx-2 p-3">
+            <i class="bi bi-journal mr-1"></i>Courses<i
+              class="bi bi-arrow-bar-left"
+              onclick="cancel()"
+            ></i>
+          </h2>
+          <hr class="bg-slate-500 my-2" />
+          <ul class="p-3 md:mx-4 flex flex-col">
+            <li class="flex mb-3 hover:bg-slate-500 hover:rounded-lg">
+              <i class="bi bi-caret-right hidden md:block"></i
+              ><a href="#" onclick="displayJava()">Java</a>
+            </li>
+            <li class="flex mb-3 hover:bg-slate-500 hover:rounded-lg">
+              <i class="bi bi-caret-right hidden md:block"></i
+              ><a href="#" onclick="displayC()">C</a>
+            </li>
+            <li class="flex mb-3 hover:bg-slate-500 hover:rounded-lg">
+              <i class="bi bi-caret-right hidden md:block"></i
+              ><a href="#" onclick="displayPhp()">Php</a>
+            </li>
+            <li class="flex mb-3 hover:bg-slate-500 hover:rounded-lg">
+              <i class="bi bi-caret-right hidden md:block"></i
+              ><a href="#" onclick="displayJavaScript()">JavaScript</a>
+            </li>
+            <li class="flex hover:bg-slate-500 hover:rounded-lg">
+              <i class="bi bi-caret-right hidden md:block"></i
+              ><a href="#" onclick="displayPython()">Python</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div
+        class="flex bg-gray-200 shadow rounded md:ml-[320px] ml-[60px] w-full h-[70vh] p-5 m-3 overflow-hidden"
+        id="main"
+      >
+        <div
+          id="javaContent"
+          class="flex overflow-hidden justify-center flex-col hidden w-full"
+        >
+          <div id="javaVideo" class="m-auto font-bold text-center text-xl">
+            <div id="jslide0" class="hidden">
+              <h4>variables</h4>
+              <iframe
+                width="w-[20vw]"
+                src="https://www.youtube.com/embed/so1iUWaLmKA"
+                title="Variables in Java ✘【12 minutes】"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div id="jslide1" class="hidden">
+              <h4>if-else</h4>
+              <iframe
+                width="w-[20vw]"
+                src="https://www.youtube.com/embed/-VeUElwL27I"
+                title="if-else Statement in Java"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div id="jslide2" class="hidden">
+              <h4>loop</h4>
+              <iframe
+                width="w-[20vw]"
+                src="https://www.youtube.com/embed/GwcisLY5avc"
+                title="The For Loop in Java"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div id="jslide3" class="hidden">
+              <h4>function</h4>
+              <iframe
+                width="w-[20vw]"
+                src="https://www.youtube.com/embed/v5p_SUfi710?list=PLZPZq0r_RZOMhCAyywfnYLlrjiVOkdAI1"
+                title="Java methods 📞"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div id="jslide4" class="hidden">
+              <h4>array</h4>
+              <iframe
+                width="w-[20vw]"
+                src="https://www.youtube.com/embed/ei_4Nt7XWOw?list=PLZPZq0r_RZOMhCAyywfnYLlrjiVOkdAI1"
+                title="Java arrays 🚗"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-x-5 m-2 ">
+            <button
+              id="Pre"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="JavaPre()"
+            >
+              Prev
+            </button>
+            <button
+              id="Nex"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="javaNext()"
+            >
+              Next
+            </button>
+          </div>
+          <div>
+            <h2>Content Table</h2>
+            <ol class="p-3 shadow-lg rounded ml-2">
+              <li class="list-roman">variable</li>
+              <li class="list-roman">if-else</li>
+              <li class="list-roman">loop</li>
+              <li class="list-roman">function</li>
+              <li class="list-roman">array</li>
+            </ol>
+          </div>
+        </div>
+        <div
+          id="cContent"
+          class="flex overflow-hidden justify-center flex-col hidden w-full"
+        >
+          <div id="cVideo" class="m-auto font-bold text-center text-xl">
+            <div id="cslide0" class="hidden m-auto">
+              <h4>variables</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/aIQk1O08zpg?list=PLZPZq0r_RZOOzY_vR4zJM32SqsSInGMwe" title="C variables 💰" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="cslide1" class="hidden">
+              <h4>if-else</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/xyQrVEFz9kw?list=PLZPZq0r_RZOOzY_vR4zJM32SqsSInGMwe" title="C if statements ✔️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="cslide2" class="hidden">
+              <h4>for loop</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/b4DPj0XAfSg?list=PLZPZq0r_RZOOzY_vR4zJM32SqsSInGMwe" title="C for loops 🔁" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="cslide3" class="hidden">
+              <h4>functions</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/ou_G7_zodR4?list=PLZPZq0r_RZOOzY_vR4zJM32SqsSInGMwe" title="C functions 📞" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="cslide4" class="hidden">
+              <h4>arrays</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/eE9MnoS0lc0?list=PLZPZq0r_RZOOzY_vR4zJM32SqsSInGMwe" title="C arrays 🗃️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-x-5 mt-2">
+            <button
+              id="Pre"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="CPre()"
+            >
+              Prev
+            </button>
+            <button
+              id="Nex"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="CNext()"
+            >
+              Next
+            </button>
+          </div>
+
+          <div>
+            <h2>Content Table</h2>
+            <ol class="p-3 shadow-lg rounded ml-2">
+              <li class="list-roman">variable</li>
+              <li class="list-roman">if-else</li>
+              <li class="list-roman">for loop</li>
+              <li class="list-roman">functions</li>
+              <li class="list-roman">arrays</li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          id="phpContent"
+          class="flex overflow-hidden justify-center flex-col hidden w-full"
+        >
+          <div id="phpVideo" class="m-auto font-bold text-center text-xl">
+            <div id="phpslide0" class="hidden m-auto">
+              <h4>variables</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/przRGJtl0HY?list=PLZPZq0r_RZOO6bGTY9jbLOyF_x6tgwcuB" title="PHP variables and data types" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="phpslide1" class="hidden">
+              <h4>if-else</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/Kp35Sa2Qay0?list=PLZPZq0r_RZOO6bGTY9jbLOyF_x6tgwcuB" title="PHP if statements" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="phpslide2" class="hidden">
+              <h4>while loop</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/Jkd1YYpA6uw?list=PLZPZq0r_RZOO6bGTY9jbLOyF_x6tgwcuB" title="PHP while loops" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="phpslide3" class="hidden">
+              <h4>functions</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/SBFO5bIDYHQ?list=PLZPZq0r_RZOO6bGTY9jbLOyF_x6tgwcuB" title="PHP functions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="phpslide4" class="hidden">
+              <h4>arrays</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/CuOZ8d7gWeU?list=PLZPZq0r_RZOO6bGTY9jbLOyF_x6tgwcuB" title="PHP arrays" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-x-5 mt-2">
+            <button
+              id="Pre"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="PhpPre()"
+            >
+              Prev
+            </button>
+            <button
+              id="Nex"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="PhpNext()"
+            >
+              Next
+            </button>
+          </div>
+
+          <div>
+            <h2>Content Table</h2>
+            <ol class="p-3 shadow-lg rounded ml-2">
+              <li class="list-roman">variables</li>
+              <li class="list-roman">if-else</li>
+              <li class="list-roman">loops</li>
+              <li class="list-roman">functions</li>
+              <li class="list-roman">arrays</li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          id="pythonContent"
+          class="flex overflow-hidden justify-center flex-col hidden w-full"
+        >
+          <div id="pythonVideo" class="m-auto font-bold text-center text-xl">
+            <div id="pyslide0" class="hidden m-auto">
+              <h4>variables</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/LKFrQXaoSMQ?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT" title="Python variables and data types you should know as a beginner ❎" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="pyslide1" class="hidden">
+              <h4>if-else</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/FvMPfrgGeKs?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT" title="If statements in Python are easy (if, elif, else) 🤔" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="pyslide2" class="hidden">
+              <h4>loops</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/rRTjPnVooxE?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT" title="While loops in Python are easy ♾️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="pyslide3" class="hidden">
+              <h4>Dictionary</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/MZZSMaEAC2g?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT" title="Python dictionaries are easy 📙" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="pyslide4" class="hidden">
+              <h4>lists, Tuple, set</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/gOMW_n2-2Mw?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT" title="Python lists, sets, and tuples explained 🍍" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-x-5 mt-2">
+            <button
+              id="Pre"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="PythonPre()"
+            >
+              Prev
+            </button>
+            <button
+              id="Nex"
+              class="bg-green-950 text-white p-2 rounded-rounded-edge"
+              onclick="PythonNext()"
+            >
+              Next
+            </button>
+          </div>
+
+          <div>
+            <h2>Content Table</h2>
+            <ol class="p-3 shadow-lg rounded ml-2">
+              <li class="list-roman">variables</li>
+              <li class="list-roman">if-else</li>
+              <li class="list-roman">loops</li>
+              <li class="list-roman">dictionary</li>
+              <li class="list-roman">lists, Tuple, set</li>
+            </ol>
+          </div>
+        </div>
+
+        <div
+          id="javascriptContent"
+          class="flex overflow-hidden justify-center flex-col hidden w-full"
+        >
+          <div
+            id="javascriptVideo"
+            class="m-auto font-bold text-center text-xl"
+          >
+            <div id="jsslide0" class="hidden m-auto">
+              <h4>variables</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/nbX0MIV7-Ek?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv" title="JavaScript VARIABLES are easy! 📦" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="jsslide1" class="hidden">
+              <h4>if-else</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/PgUXiprlg1k?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv" title="If statements in JavaScript are easy 🤔" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="jsslide2" class="hidden">
+              <h4>loops</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/TDUz9QcGPoE?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv" title="Learn JavaScript WHILE LOOPS in 8 minutes! 🔁" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="jsslide3" class="hidden">
+              <h4>functions</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/wssvLtVSFeI?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv" title="Useful JavaScript STRING METHODS 🧵" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div id="jsslide4" class="hidden">
+              <h4>arrays</h4>
+              <iframe width="w-[20vw]" src="https://www.youtube.com/embed/yQ1fz8LY354?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv" title="Learn JavaScript ARRAYS in 8 minutes! 🗃" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-x-5 mt-2">
+            <button
+              id="Pre"
+              class="bg-green-950 text-white p-2 rounded"
+              onclick="JavaScriptPre()"
+            >
+              Prev
+            </button>
+            <button
+              id="Nex"
+              class="bg-green-950 text-white p-2 rounded"
+              onclick="JavaScriptNext()"
+            >
+              Next
+            </button>
+          </div>
+
+          <div>
+            <h2>JavaScript Content Table</h2>
+            <ol class="p-3 shadow-lg rounded ml-2">
+              <li class="list-roman">variables</li>
+              <li class="list-roman">if-else</li>
+              <li class="list-roman">loops</li>
+              <li class="list-roman">functions</li>
+              <li class="list-roman">arrays</li>
+            </ol>
+          </div>
+        </div>
+        <div id="QuizPage" class="m-auto">
+          <div id="login" class="hidden flex flex-col text-xl gap-x-5">
+                <label id="title" class="font-bold m-auto"></label>
+                <input type="text" id="name" class="rounded p-2 border-slate-400" placeholder="name">
+                <label id="name-error" class="text-red-700 text-sm"></label>
+                <input type="email" id="email" class="rounded p-2 border-slate-400" placeholder="email">
+                <label id="email-error" class="text-red-700 text-sm"></label>
+                <input type="submit" value="submit" class="bg-green-900 text-white p-2 font-bold" onclick="submit()">
+          </div>
+          <div id="quiz" class="hidden bg-white shadow rounded p-5">
+            <div id="timer flex justify-center font-bold text-2xl">
+              <label id="time"></label>
+            </div>
+            <div id="javaQuestion" class="mb-4">
+              <p id="quest"></p>
+              <input type="radio" name="option" value="0" /><label id="optlabel1"
+                id="opt1"
+              ></label>
+              <input type="radio" name="option" value="1" /><label  id="optlabel2"
+                id="opt2"
+              ></label>
+            </div>
+            <div class="flex items-center justify-end">
+              <button
+                id="Next"
+                class="bg-green-950 text-white p-2 rounded"
+                onclick="NextQuestion()"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div id="result" class="flex flex-col hidden text-center font-semibold text-2xl bg-white shadow rounded p-5">
+                 <label id="n"></label>
+                 <label id="e"></label>
+                 <label id="score"></label>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="h-footer flex justify-center items-center bg-gradient-to-t from-navy to-greyblue w-full text-white fixed bottom-0"
+    >
+      LearningHub slogan Education for all Copywright 2024
+    </footer>
+    <script src="indexJs.js"></script>
+  </body>
+</html>
